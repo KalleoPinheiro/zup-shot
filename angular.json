@@ -136,5 +136,10 @@
       }
     }
   },
-  "defaultProject": "zup-shot"
+  "defaultProject": "zup-shot",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
