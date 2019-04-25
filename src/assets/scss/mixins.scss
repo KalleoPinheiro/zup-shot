@@ -1,0 +1,40 @@
+@mixin font-roboto($type: false) {
+  @if $type==light {
+    font-weight: 300 !important;
+  } @else if $type==bold {
+    font-weight: bold !important;
+  } @else {
+    font-weight: normal !important;
+  }
+  font-family: $roboto !important;
+}
+
+@mixin font-ubuntu($type: false) {
+  @if $type==light {
+    font-weight: 300 !important;
+  } @else if $type==bold {
+    font-weight: bold !important;
+  } @else {
+    font-weight: normal !important;
+  }
+  font-family: $ubuntu !important;
+}
+
+@mixin font-source($type: false) {
+  @if $type==light {
+    font-weight: 300 !important;
+  } @else if $type==bold {
+    font-weight: bold !important;
+  } @else {
+    font-weight: normal !important;
+  }
+  font-family: $source !important;
+}
+
+@function convertPixel($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+@mixin size-font($font-size: number) {
+  font-size: convertPixel($font-size);
+}

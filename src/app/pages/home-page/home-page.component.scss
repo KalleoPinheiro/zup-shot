@@ -1,0 +1,18 @@
+@import './../../../assets//scss/variables.scss';
+@import './../../../assets//scss/mixins.scss';
+
+#home-page {
+  // display: flex;
+  // flex-flow: column nowrap;
+  .header {
+    // flex: 1;
+    // align-self: flex-start;
+  }
+  .container {
+    // height: 80%;
+  }
+  .footer {
+    // flex: 1;
+    // align-self: flex-end;
+  }
+}

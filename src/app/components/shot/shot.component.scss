@@ -1,0 +1,15 @@
+@import './../../../assets/scss/mixins.scss';
+@import './../../../assets/scss/variables.scss';
+
+#home-page {
+  & .image-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: calc(100vh - 157px) !important;
+    align-items: center;
+    & .image {
+      // flex: 1;
+    }
+  }
+}

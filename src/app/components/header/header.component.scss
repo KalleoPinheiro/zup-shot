@@ -1,0 +1,14 @@
+@import './../../../assets/scss/mixins.scss';
+@import './../../../assets/scss/variables.scss';
+
+header {
+  background-color: $playbook;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  & .mat-icon {
+    width: 10% !important;
+    height: 10% !important;
+  }
+}

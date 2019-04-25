@@ -1,0 +1,11 @@
+<div id="home-page" *ngIf="shots.length">
+  <h1>Teste</h1>
+  <div class="image-content">
+    <div class="image" *ngFor="let shot of shots">
+      <picture>
+        <source srcset="{{shot.images.normal}}" media="(max-width: 200px)" />
+        <img src="{{ shot.images.teaser }}" alt="{{ shot.title }}" />
+      </picture>
+    </div>
+  </div>
+</div>
