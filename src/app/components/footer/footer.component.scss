@@ -4,7 +4,27 @@
 footer {
   background-color: $playbook;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   min-height: 60px;
+  & .links {
+    & a {
+      color: $charcoal;
+    }
+    display: flex;
+    align-items: center;
+    width: 300px;
+    & .phone {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 10px;
+      & span {
+        margin: 0 0 0 10px;
+      }
+    }
+    h3 {
+      width: 300px;
+    }
+  }
 }

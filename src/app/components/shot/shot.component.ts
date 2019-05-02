@@ -11,7 +11,6 @@ import { ShotService } from './../../services/shot.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ShotComponent implements OnInit {
-  title = 'zup-shot';
   shots: IShot[] = [];
   sizeImage = false;
   shotForm: FormGroup;
