@@ -2,14 +2,57 @@
 @import './../../../assets/scss/variables.scss';
 
 #home-page {
-  & .image-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  section {
+    background-color: $link_blue;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    min-height: calc(100vh - 157px) !important;
     align-items: center;
-    & .image {
-      // flex: 1;
+    justify-content: space-around;
+    width: 100%;
+    & .searchField {
+      min-width: 300px;
+      width: 100%;
     }
+    & .mat-button-toggle-group {
+      margin: 20px;
+      & :hover {
+        background-color: $pink !important;
+      }
+    }
+    & .mat-icon {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  & .empty {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 210px) !important;
+  }
+  & .shot-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width: 70%;
+    min-height: calc(100vh - 230px) !important;
+    align-items: center;
+    margin: 10px;
+    & img {
+      margin: 10px;
+    }
+    & .title {
+      text-align: center;
+    }
+  }
+  .size1 {
+    width: 200px !important;
+  }
+  .size2 {
+    width: 400px !important;
   }
 }

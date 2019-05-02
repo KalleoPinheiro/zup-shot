@@ -1,13 +1,11 @@
-import { MaterialModule } from './shared/material.module';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 import { ShotModule } from './components/shot/shot.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { DefaultModule } from './shared/default.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     FooterComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MaterialModule,
-    ShotModule
-  ],
+  imports: [BrowserModule, DefaultModule, ShotModule],
   providers: [],
   bootstrap: [AppComponent]
 })

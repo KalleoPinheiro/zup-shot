@@ -1,11 +1,44 @@
-<div id="home-page" *ngIf="shots.length">
-  <h1>Teste</h1>
-  <div class="image-content">
+<div id="home-page">
+  <section>
+    <form [formGroup]="shotForm">
+      <mat-form-field class="searchField">
+        <input
+          matInput
+          type="text"
+          placeholder="Procurar por shot..."
+          formControlName="searched"
+        />
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Limpar Filtro"
+          (click)="getShots()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+    <mat-button-toggle-group #group="matButtonToggleGroup" value="size1">
+      <mat-button-toggle value="size1">
+        <mat-icon>crop_16_9</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="size2">
+        <mat-icon>crop_free</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </section>
+  <div *ngIf="!shots.length" class="empty">
+    <p>Nenhum shot encontrado!</p>
+  </div>
+  <div class="shot-content" *ngIf="shots.length">
     <div class="image" *ngFor="let shot of shots">
-      <picture>
-        <source srcset="{{shot.images.normal}}" media="(max-width: 200px)" />
-        <img src="{{ shot.images.teaser }}" alt="{{ shot.title }}" />
-      </picture>
+      <img
+        src="{{ shot.images.normal }}"
+        alt="{{ shot.title }}"
+        class="{{ group.value }}"
+      />
+      <div class="title" innerHTML="{{ shot.title }}"></div>
     </div>
   </div>
 </div>
