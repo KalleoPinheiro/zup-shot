@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { of } from 'rxjs';
-import { debounceTime, filter, map, merge, switchMap } from 'rxjs/operators';
+import { debounceTime, filter } from 'rxjs/operators';
 import { IShot } from 'src/app/models/shot';
 import { ShotService } from './../../services/shot.service';
 
 @Component({
   selector: 'app-shot',
   templateUrl: './shot.component.html',
-  styleUrls: ['./shot.component.scss']
+  styleUrls: ['./shot.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ShotComponent implements OnInit {
   title = 'zup-shot';

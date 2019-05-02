@@ -42,8 +42,14 @@
     min-height: calc(100vh - 230px) !important;
     align-items: center;
     margin: 10px;
-    & img {
-      margin: 10px;
+    .image {
+      & img {
+        margin: 10px;
+        cursor: pointer;
+      }
+      & :hover {
+        opacity: 0.5;
+      }
     }
     & .title {
       text-align: center;

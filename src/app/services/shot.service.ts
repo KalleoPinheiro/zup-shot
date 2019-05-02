@@ -10,7 +10,7 @@ import { IShot } from '../models/shot';
 
 const baseUrl = 'https://api.dribbble.com/v2';
 const token =
-  'Bearer 2e331caab6f1c294db190218825e8475c04c9985d48d72985dabe615be01b419';
+  'Bearer 2af6145703e4530b1af77e531717340f262fd1787add034a8216cadf8885046f';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -29,6 +29,31 @@ export class ShotService {
       tap(data => JSON.stringify(data)),
       catchError(this.handleError)
     );
+  }
+
+  find(id: number): Observable<IShot[]> {
+    return this.http.get<IShot[]>(`${baseUrl}/shots/${id}`, httpOptions).pipe(
+      tap(data => JSON.stringify(data)),
+      catchError(this.handleError)
+    );
+  }
+
+  like(id: number): Observable<IShot[]> {
+    return this.http
+      .post<IShot[]>(`${baseUrl}/shots/${id}/like`, null, httpOptions)
+      .pipe(
+        tap(data => JSON.stringify(data)),
+        catchError(this.handleError)
+      );
+  }
+
+  unlike(id: number): Observable<IShot[]> {
+    return this.http
+      .delete<IShot[]>(`${baseUrl}/shots/${id}/like`, httpOptions)
+      .pipe(
+        tap(data => JSON.stringify(data)),
+        catchError(this.handleError)
+      );
   }
 
   private handleError(err: HttpErrorResponse) {

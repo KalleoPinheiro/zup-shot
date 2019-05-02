@@ -37,8 +37,9 @@
         src="{{ shot.images.normal }}"
         alt="{{ shot.title }}"
         class="{{ group.value }}"
+        [routerLink]="['/shot', shot.id]"
       />
-      <div class="title" innerHTML="{{ shot.title }}"></div>
+      <div class="title">{{ shot.title }}</div>
     </div>
   </div>
 </div>

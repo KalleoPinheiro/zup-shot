@@ -1,0 +1,34 @@
+@import './../../../assets//scss/variables.scss';
+@import './../../../assets//scss/mixins.scss';
+
+#detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  min-height: calc(100vh - 160px) !important;
+  h2 {
+    margin: 20px;
+  }
+  .image-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    & .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px;
+      min-width: 400px;
+      button {
+        min-width: 20px;
+      }
+      .description {
+        min-width: 20px;
+      }
+    }
+  }
+}

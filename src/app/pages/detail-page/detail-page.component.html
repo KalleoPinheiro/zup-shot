@@ -1,0 +1,18 @@
+<app-header></app-header>
+<section id="detail" *ngIf="shot">
+  <h2>
+    {{ shot.title }}
+  </h2>
+  <div class="image-content">
+    <img src="{{ shot.images?.normal }}" alt="{{ shot.title }}" />
+    <div class="actions">
+      <div class="description" innerHTML="{{ shot.description }}"></div>
+      <button mat-mini-fab>
+        <mat-icon aria-label="Curtir..." (click)="likeAShot(shot.id)"
+          >thumb_up</mat-icon
+        >
+      </button>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
